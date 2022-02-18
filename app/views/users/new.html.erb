@@ -1,9 +1,9 @@
-<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %>
-  <%= label_tag(:email, "Email:") %>
-  <%= text_field_tag(:email) %>
-  <%= label_tag(:password, "Password:") %>
-  <%= text_field_tag(:password) %>
-  <%= submit_tag("Submit") %>
+<%= form_with model: @user do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: "email@example.com" %>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <%= form.submit "Submit" %>
 <% end %>
